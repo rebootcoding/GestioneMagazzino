@@ -34,7 +34,7 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.cbx_select_store = new System.Windows.Forms.ComboBox();
             this.button5 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -100,11 +100,11 @@
             // 
             // comboBox3
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(99, 58);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(264, 28);
-            this.comboBox3.TabIndex = 36;
+            this.cbx_select_store.FormattingEnabled = true;
+            this.cbx_select_store.Location = new System.Drawing.Point(99, 58);
+            this.cbx_select_store.Name = "comboBox3";
+            this.cbx_select_store.Size = new System.Drawing.Size(264, 28);
+            this.cbx_select_store.TabIndex = 36;
             // 
             // button5
             // 
@@ -123,7 +123,7 @@
             this.ClientSize = new System.Drawing.Size(1190, 731);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.comboBox3);
+            this.Controls.Add(this.cbx_select_store);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
@@ -131,6 +131,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Name = "Form1";
             this.Text = "Store Manager";
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -144,7 +145,7 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox cbx_select_store;
         private System.Windows.Forms.Button button5;
     }
 }

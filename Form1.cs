@@ -14,10 +14,11 @@ namespace GestioneMagazzino
 {
     public partial class Form1 : Form
     {
-
+        public db_a967b2_dblogintestEntities ctx;
         public Form1()
         {
             InitializeComponent();
+            ctx = new db_a967b2_dblogintestEntities();
         }
 
         private void Add_product_on_store(object sender, EventArgs e)
@@ -35,6 +36,12 @@ namespace GestioneMagazzino
         private void Update_Stores(object sender, EventArgs e)
         {
             //ctx.SaveChanges();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            cbx_select_store.DataSource = ctx.stores.ToList();
+            cbx_select_store.DisplayMember = "store_name";
         }
     }
 }
