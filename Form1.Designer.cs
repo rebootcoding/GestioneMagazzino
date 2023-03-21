@@ -79,6 +79,7 @@
             this.button3.TabIndex = 34;
             this.button3.Text = "Store Info";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.btn_show_store_info_Click);
             // 
             // button4
             // 
@@ -98,11 +99,11 @@
             this.label2.TabIndex = 37;
             this.label2.Text = "Select Store";
             // 
-            // comboBox3
+            // cbx_select_store
             // 
             this.cbx_select_store.FormattingEnabled = true;
             this.cbx_select_store.Location = new System.Drawing.Point(99, 58);
-            this.cbx_select_store.Name = "comboBox3";
+            this.cbx_select_store.Name = "cbx_select_store";
             this.cbx_select_store.Size = new System.Drawing.Size(264, 28);
             this.cbx_select_store.TabIndex = 36;
             // 

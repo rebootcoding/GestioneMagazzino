@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity;
 using System.Drawing;
 using System.Linq;
 using System.Runtime.InteropServices.ComTypes;
@@ -42,6 +43,13 @@ namespace GestioneMagazzino
         {
             cbx_select_store.DataSource = ctx.stores.ToList();
             cbx_select_store.DisplayMember = "store_name";
+        }
+
+        private void btn_show_store_info_Click(object sender, EventArgs e)
+        {
+            var b = cbx_select_store.Text;
+
+            dataGridView1.DataSource = ctx.Database.SqlQuery<store>($"SELECT * FROM sales.stores s WHERE s.store_name = '{b}' ").ToList();
         }
     }
 }
