@@ -19,6 +19,7 @@ namespace GestioneMagazzino
 
         private void Save_Store(object sender, EventArgs e)
         {
+            //salvataggio dei dati
             this.Close();
         }
     }
