@@ -57,10 +57,18 @@ namespace GestioneMagazzino
         private void btn_list_products_Click(object sender, EventArgs e)
         {
             var product_name = cbx_select_store.Text;
-            var id_store = cbx_select_store.SelectedValue;
-            dataGridView1.DataSource = ctx.Database.SqlQuery<product>($"SELECT *\r\nFROM production.products p JOIN production.stocks s ON p.product_id = s.product_id\r\nJOIN sales.stores s1 ON s.store_id = s1.store_id\r\nJOIN production.stocks s2 ON s1.store_id = s2.store_id\r\nWHERE s.store_id = '{id_store}'").ToList();
-            MessageBox.Show(id_store.ToString());
-          /*  var query = db.Accounts.Join(db.BankTransactions, acc => acc.AccountID, bank => bank.AccountID, (acc, bank) => new { Account = acc, BankTransaction = bank });*/
+
+            var store_id = int.Parse(cbx_select_store.SelectedValue.ToString());
+            var table = from store in ctx.stocks.Where(x => x.store_id == store_id)
+                        select new
+                        {
+                            nomeStore = store.store.store_name,
+                            nomeProdotto = store.product.product_name,
+                            quantitaProdotto = store.quantity,
+                            prezzoProdotto = store.product.list_price
+                        };
+
+            dataGridView1.DataSource = table.ToList();
         }
     }
 }
