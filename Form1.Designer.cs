@@ -89,6 +89,7 @@
             this.button4.TabIndex = 35;
             this.button4.Text = "Product List by Store";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.btn_list_products_Click);
             // 
             // label2
             // 
