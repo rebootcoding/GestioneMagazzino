@@ -22,7 +22,7 @@ namespace GestioneMagazzino
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void Save_Stock_Click(object sender, EventArgs e)
         {
             this.Close();
         }

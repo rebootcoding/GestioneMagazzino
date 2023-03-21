@@ -165,7 +165,7 @@
             this.button1.TabIndex = 34;
             this.button1.Text = "Save Store";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.Save_Store);
+            this.button1.Click += new System.EventHandler(this.Save_Store_Click);
             // 
             // Add_Store_Form
             // 
@@ -189,6 +189,7 @@
             this.Controls.Add(this.button1);
             this.Name = "Add_Store_Form";
             this.Text = "Add Store Form";
+            this.Load += new System.EventHandler(this.Add_Store_Form_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

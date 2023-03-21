@@ -17,9 +17,14 @@ namespace GestioneMagazzino
             InitializeComponent();
         }
 
-        private void Save_Store(object sender, EventArgs e)
+        private void Save_Store_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void Add_Store_Form_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
