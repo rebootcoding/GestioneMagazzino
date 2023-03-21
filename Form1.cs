@@ -47,9 +47,9 @@ namespace GestioneMagazzino
 
         private void btn_show_store_info_Click(object sender, EventArgs e)
         {
-            var b = cbx_select_store.Text;
+            var store_name = cbx_select_store.Text;
 
-            dataGridView1.DataSource = ctx.Database.SqlQuery<store>($"SELECT * FROM sales.stores s WHERE s.store_name = '{b}' ").ToList();
+            dataGridView1.DataSource = ctx.Database.SqlQuery<store>($"SELECT * FROM sales.stores s WHERE s.store_name = '{store_name}' ").ToList();
         }
     }
 }
