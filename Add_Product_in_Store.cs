@@ -30,14 +30,23 @@ namespace GestioneMagazzino
 
         private void Save_Stock_Click(object sender, EventArgs e)
         {
-            var idProdotto = ((product)cbx_select_product.SelectedItem).product_id;
-            var idStore = ((store)cbx_select_store.SelectedItem).store_id;
-            var quantità = (int)num_quantity.Value; 
+            var productSelect = ((product)cbx_select_product.SelectedItem);
+            var storeSelect = ((store)cbx_select_store.SelectedItem);
+            var quantità = (int)num_quantity.Value;
 
 
-            InsertStock(idProdotto, idStore, quantità);
+            InsertStock(productSelect.product_id, storeSelect.store_id, quantità);
+            var res = MessageBox.Show(this, $"The data entered are: {Environment.NewLine} Product name: {productSelect.product_name},{Environment.NewLine} Store name{storeSelect.store_name},{Environment.NewLine} quantità: {quantità}. Confirm?", "Warning",
+                       MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+            if (res != DialogResult.Yes)
+            {
+
+                return;
+            }
             ctx.SaveChanges();
-            this.Close();
+            num_quantity.Value = 0;
+          //  this.Close();
 
         }
 
@@ -56,5 +65,19 @@ namespace GestioneMagazzino
                 );
             }
         }
+
+        //message box 
+        private void Add_Product_in_Store_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            var res = MessageBox.Show(this, "You really want to quit?", "Exit",
+                        MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
+            //se no la form add_product non viene chiusa
+            if (res != DialogResult.Yes)
+            {
+                e.Cancel = true;
+                return;
+            }
+        }
     }
 }
+

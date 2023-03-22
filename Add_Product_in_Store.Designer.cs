@@ -112,6 +112,7 @@
             this.Controls.Add(this.cbx_select_store);
             this.Name = "Add_Product_in_Store";
             this.Text = "Add Product in Store";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Add_Product_in_Store_FormClosing);
             this.Load += new System.EventHandler(this.Add_Product_in_Store_Load);
             ((System.ComponentModel.ISupportInitialize)(this.num_quantity)).EndInit();
             this.ResumeLayout(false);
