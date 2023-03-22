@@ -26,7 +26,7 @@ namespace GestioneMagazzino
         private void Add_product_on_store(object sender, EventArgs e)
         {
             var m = new Add_Product_in_Store();
-            m.Show();
+            m.ShowDialog();         //non fa accedere alla finestra secondaria
         }
 
         private void Add_new_store(object sender, EventArgs e)
@@ -51,22 +51,56 @@ namespace GestioneMagazzino
         {
             var store_name = cbx_select_store.Text;
 
-            dataGridView1.DataSource = ctx.Database.SqlQuery<store>($"SELECT * FROM sales.stores s WHERE s.store_name = '{store_name}' ").ToList();
+            //dataGridView1.DataSource = ctx.Database.SqlQuery<store>($"SELECT * FROM sales.stores s WHERE s.store_name = '{store_name}' ").ToList();
+            listBox1.DataSource = ctx.stores.Where(x => x.store_name == store_name).Select( x => new
+            {
+                x.store_id, x.store_name, x.email, x.phone, x.city, x.state, x.street
+            }).ToList();
         }
 
         private void btn_list_products_Click(object sender, EventArgs e)
         {
             var product_name = cbx_select_store.Text;
 
-            var store_id = int.Parse(cbx_select_store.SelectedValue.ToString());
+            var store_id = ((store)cbx_select_store.SelectedItem).store_id;
+            //var store_id = int.Parse(cbx_select_store.SelectedValue.ToString());
+
+            //anonimous type
             var table = from store in ctx.stocks.Where(x => x.store_id == store_id)
                         select new
                         {
                             nomeStore = store.store.store_name,
                             nomeProdotto = store.product.product_name,
                             quantitaProdotto = store.quantity,
-                            prezzoProdotto = store.product.list_price
+                            prezzoProdotto = store.product.list_price,
+                            cognome = ""
                         };
+
+            //linq query syntax
+            
+            var table3 = from store in ctx.stocks
+                         where store.store_id == store_id
+                         select new
+                         {
+                             nomeStore = store.store.store_name,
+                             nomeProdotto = store.product.product_name,
+                             quantitaProdotto = store.quantity,
+                             prezzoProdotto = store.product.list_price,
+                             cognome = ""
+                         };
+            
+
+            //linq method syntax
+            
+            var table2 = ctx.stocks.Where(x => x.store_id == store_id).Select(x => new
+            {
+                nomeStore = x.store.store_name,
+                nomeProdotto = x.product.product_name,
+                quantitaProdotto = x.quantity,          //nullable int?
+                prezzoProdotto = x.product.list_price,
+                cognome = ""
+            });
+            
 
             dataGridView1.DataSource = table.ToList();
         }

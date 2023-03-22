@@ -36,6 +36,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.cbx_select_store = new System.Windows.Forms.ComboBox();
             this.button5 = new System.Windows.Forms.Button();
+            this.listBox1 = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -44,18 +45,18 @@
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 116);
+            this.dataGridView1.Location = new System.Drawing.Point(65, 264);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(1166, 467);
+            this.dataGridView1.Size = new System.Drawing.Size(1036, 319);
             this.dataGridView1.TabIndex = 2;
             // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(799, 617);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(329, 51);
+            this.button1.Size = new System.Drawing.Size(302, 51);
             this.button1.TabIndex = 4;
             this.button1.Text = "Add New Store";
             this.button1.UseVisualStyleBackColor = true;
@@ -63,9 +64,9 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(48, 617);
+            this.button2.Location = new System.Drawing.Point(65, 617);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(329, 51);
+            this.button2.Size = new System.Drawing.Size(312, 51);
             this.button2.TabIndex = 23;
             this.button2.Text = "Add Product on Stock";
             this.button2.UseVisualStyleBackColor = true;
@@ -73,7 +74,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(400, 46);
+            this.button3.Location = new System.Drawing.Point(423, 46);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(329, 51);
             this.button3.TabIndex = 34;
@@ -83,9 +84,9 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(772, 46);
+            this.button4.Location = new System.Drawing.Point(799, 46);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(329, 51);
+            this.button4.Size = new System.Drawing.Size(302, 50);
             this.button4.TabIndex = 35;
             this.button4.Text = "Product List by Store";
             this.button4.UseVisualStyleBackColor = true;
@@ -94,7 +95,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(95, 24);
+            this.label2.Location = new System.Drawing.Point(61, 21);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(97, 20);
             this.label2.TabIndex = 37;
@@ -103,9 +104,9 @@
             // cbx_select_store
             // 
             this.cbx_select_store.FormattingEnabled = true;
-            this.cbx_select_store.Location = new System.Drawing.Point(99, 58);
+            this.cbx_select_store.Location = new System.Drawing.Point(65, 58);
             this.cbx_select_store.Name = "cbx_select_store";
-            this.cbx_select_store.Size = new System.Drawing.Size(264, 28);
+            this.cbx_select_store.Size = new System.Drawing.Size(299, 28);
             this.cbx_select_store.TabIndex = 36;
             // 
             // button5
@@ -118,11 +119,22 @@
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.Update_Stores);
             // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.ItemHeight = 20;
+            this.listBox1.Location = new System.Drawing.Point(65, 148);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(1036, 64);
+            this.listBox1.TabIndex = 39;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1190, 731);
+            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.cbx_select_store);
@@ -149,6 +161,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cbx_select_store;
         private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.ListBox listBox1;
     }
 }
 
