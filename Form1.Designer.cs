@@ -36,8 +36,11 @@
             this.label2 = new System.Windows.Forms.Label();
             this.cbx_select_store = new System.Windows.Forms.ComboBox();
             this.button5 = new System.Windows.Forms.Button();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lbl_store_info = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -45,7 +48,7 @@
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(65, 264);
+            this.dataGridView1.Location = new System.Drawing.Point(64, 231);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 28;
@@ -54,23 +57,23 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(799, 617);
+            this.button1.Location = new System.Drawing.Point(799, 590);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(302, 51);
             this.button1.TabIndex = 4;
             this.button1.Text = "Add New Store";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.Add_new_store);
+            this.button1.Click += new System.EventHandler(this.Add_new_store_Click);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(65, 617);
+            this.button2.Location = new System.Drawing.Point(65, 590);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(312, 51);
             this.button2.TabIndex = 23;
             this.button2.Text = "Add Product on Stock";
             this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.Add_product_on_store);
+            this.button2.Click += new System.EventHandler(this.Add_product_on_store_Click);
             // 
             // button3
             // 
@@ -111,22 +114,41 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(423, 617);
+            this.button5.Location = new System.Drawing.Point(423, 590);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(329, 51);
             this.button5.TabIndex = 38;
             this.button5.Text = "Update Store";
             this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.Update_Stores);
+            this.button5.Click += new System.EventHandler(this.Update_Stores_Click);
             // 
-            // listBox1
+            // groupBox1
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 20;
-            this.listBox1.Location = new System.Drawing.Point(65, 148);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(1036, 64);
-            this.listBox1.TabIndex = 39;
+            this.groupBox1.Controls.Add(this.lbl_store_info);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Location = new System.Drawing.Point(65, 125);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(1035, 74);
+            this.groupBox1.TabIndex = 39;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Selected Store Infos";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(27, 32);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(0, 20);
+            this.label1.TabIndex = 0;
+            // 
+            // lbl_store_info
+            // 
+            this.lbl_store_info.AutoSize = true;
+            this.lbl_store_info.Location = new System.Drawing.Point(27, 32);
+            this.lbl_store_info.Name = "lbl_store_info";
+            this.lbl_store_info.Size = new System.Drawing.Size(13, 20);
+            this.lbl_store_info.TabIndex = 1;
+            this.lbl_store_info.Text = " ";
             // 
             // Form1
             // 
@@ -134,7 +156,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1190, 731);
-            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.cbx_select_store);
@@ -147,6 +169,8 @@
             this.Text = "Store Manager";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -161,7 +185,9 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cbx_select_store;
         private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbl_store_info;
     }
 }
 
