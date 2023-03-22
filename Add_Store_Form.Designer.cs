@@ -31,7 +31,7 @@
             this.label12 = new System.Windows.Forms.Label();
             this.tbx_Street = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.tbx_zipCode = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.tbx_Email = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -70,12 +70,13 @@
             this.label8.TabIndex = 46;
             this.label8.Text = "Zip Code";
             // 
-            // textBox6
+            // tbx_zipCode
             // 
-            this.textBox6.Location = new System.Drawing.Point(783, 196);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(252, 26);
-            this.textBox6.TabIndex = 45;
+            this.tbx_zipCode.Location = new System.Drawing.Point(783, 196);
+            this.tbx_zipCode.MaxLength = 5;
+            this.tbx_zipCode.Name = "tbx_zipCode";
+            this.tbx_zipCode.Size = new System.Drawing.Size(252, 26);
+            this.tbx_zipCode.TabIndex = 45;
             // 
             // label9
             // 
@@ -88,6 +89,7 @@
             // 
             // tbx_Email
             // 
+            this.tbx_Email.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
             this.tbx_Email.Location = new System.Drawing.Point(644, 115);
             this.tbx_Email.Name = "tbx_Email";
             this.tbx_Email.Size = new System.Drawing.Size(255, 26);
@@ -175,7 +177,7 @@
             this.Controls.Add(this.label12);
             this.Controls.Add(this.tbx_Street);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.textBox6);
+            this.Controls.Add(this.tbx_zipCode);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.tbx_Email);
             this.Controls.Add(this.label4);
@@ -200,7 +202,7 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox tbx_Street;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox tbx_zipCode;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox tbx_Email;
         private System.Windows.Forms.Label label4;
