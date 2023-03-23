@@ -40,7 +40,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(884, 88);
+            this.button2.Location = new System.Drawing.Point(922, 93);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(165, 51);
             this.button2.TabIndex = 30;
@@ -51,7 +51,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(729, 68);
+            this.label11.Location = new System.Drawing.Point(787, 73);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(68, 20);
             this.label11.TabIndex = 29;
@@ -59,7 +59,7 @@
             // 
             // num_quantity
             // 
-            this.num_quantity.Location = new System.Drawing.Point(733, 101);
+            this.num_quantity.Location = new System.Drawing.Point(791, 106);
             this.num_quantity.Name = "num_quantity";
             this.num_quantity.Size = new System.Drawing.Size(97, 26);
             this.num_quantity.TabIndex = 28;
@@ -67,7 +67,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(401, 68);
+            this.label10.Location = new System.Drawing.Point(318, 73);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(72, 20);
             this.label10.TabIndex = 27;
@@ -76,15 +76,15 @@
             // cbx_select_product
             // 
             this.cbx_select_product.FormattingEnabled = true;
-            this.cbx_select_product.Location = new System.Drawing.Point(393, 101);
+            this.cbx_select_product.Location = new System.Drawing.Point(322, 106);
             this.cbx_select_product.Name = "cbx_select_product";
-            this.cbx_select_product.Size = new System.Drawing.Size(307, 28);
+            this.cbx_select_product.Size = new System.Drawing.Size(444, 28);
             this.cbx_select_product.TabIndex = 26;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(72, 68);
+            this.label1.Location = new System.Drawing.Point(62, 73);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(56, 20);
             this.label1.TabIndex = 25;
@@ -93,9 +93,9 @@
             // cbx_select_store
             // 
             this.cbx_select_store.FormattingEnabled = true;
-            this.cbx_select_store.Location = new System.Drawing.Point(64, 101);
+            this.cbx_select_store.Location = new System.Drawing.Point(66, 106);
             this.cbx_select_store.Name = "cbx_select_store";
-            this.cbx_select_store.Size = new System.Drawing.Size(307, 28);
+            this.cbx_select_store.Size = new System.Drawing.Size(232, 28);
             this.cbx_select_store.TabIndex = 24;
             // 
             // Add_Product_in_Store

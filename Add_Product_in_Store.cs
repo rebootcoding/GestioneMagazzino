@@ -24,7 +24,8 @@ namespace GestioneMagazzino
         {
             cbx_select_store.DataSource = ctx.stores.ToList();
             cbx_select_store.DisplayMember = "store_name";
-            cbx_select_product.DataSource = ctx.products.ToList();
+            //var idstore = ((store)cbx_select_store.SelectedItem);
+            cbx_select_product.DataSource = ctx.products.OrderBy(x => x.product_name).ToList(); //errore rimane!
             cbx_select_product.DisplayMember = "product_name";
         }
 
@@ -36,7 +37,7 @@ namespace GestioneMagazzino
 
 
             InsertStock(productSelect.product_id, storeSelect.store_id, quantità);
-            var res = MessageBox.Show(this, $"The data entered are: {Environment.NewLine} Product name: {productSelect.product_name},{Environment.NewLine} Store name{storeSelect.store_name},{Environment.NewLine} quantità: {quantità}. Confirm?", "Warning",
+            var res = MessageBox.Show(this, $"The data entered are: {Environment.NewLine}{Environment.NewLine}PRODUCT NAME:{Environment.NewLine}{productSelect.product_name}{Environment.NewLine}{Environment.NewLine}STORE NAME:{Environment.NewLine}{storeSelect.store_name}{Environment.NewLine}{Environment.NewLine}QUANTITY:{Environment.NewLine}{quantità}{Environment.NewLine}{Environment.NewLine}Confirm?", "Warning",
                        MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
             if (res != DialogResult.Yes)

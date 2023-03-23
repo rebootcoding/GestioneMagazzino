@@ -5,7 +5,9 @@ using System.Data;
 using System.Data.Entity;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices.ComTypes;
+using System.Runtime.Remoting.Messaging;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
@@ -35,17 +37,13 @@ namespace GestioneMagazzino
             m.ShowDialog();
         }
 
-        private void Update_Stores_Click(object sender, EventArgs e)
-        {
-            ctx.SaveChanges();
-        }
 
         private void Form1_Load(object sender, EventArgs e)
         {
             cbx_select_store.DataSource = ctx.stores.ToList();
             cbx_select_store.DisplayMember = "store_name";
             cbx_select_store.ValueMember = "store_id";
-            
+
         }
 
         private void btn_show_store_info_Click(object sender, EventArgs e)
@@ -63,24 +61,26 @@ namespace GestioneMagazzino
 
         }
 
+        
 
         private void btn_list_products_Click(object sender, EventArgs e)
         {
             var product_name = cbx_select_store.Text;
 
-            var store_id = ((store)cbx_select_store.SelectedItem).store_id;
+            var store_id = (int)cbx_select_store.SelectedValue;
 
-            //crea un nuovo tipo incrociando informazioni da tabella store e tabella prodotto - uso di "linq method syntax"
-            var product_list = ctx.stocks.Where(x => x.store_id == store_id).Select(x => new
-            {
-                StoreId = x.store.store_id,
-                StoreName = x.store.store_name,
-                ProductName = x.product.product_name,
-                Quantity = x.quantity,         
-                Price = x.product.list_price,
-            });
-            dataGridView1.DataSource = product_list.ToList();
+            // mostra la tabella stock con le tre colonne + colonna product e store con oggetti dentro ma con override del metodo ToString();
+            var tabelle = ctx.stocks.Where(x => x.store_id == store_id).ToList();
+            dataGridView1.DataSource = tabelle;
         }
+
+        private void Update_Stores_Click(object sender, EventArgs e)
+        {
+            
+            ctx.SaveChanges();
+            MessageBox.Show("Data has been updated");
+        }
+
 
     }
 }

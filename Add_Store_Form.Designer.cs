@@ -158,6 +158,7 @@
             this.tbx_Name.Name = "tbx_Name";
             this.tbx_Name.Size = new System.Drawing.Size(255, 26);
             this.tbx_Name.TabIndex = 35;
+            
             // 
             // button1
             // 
@@ -191,7 +192,7 @@
             this.Controls.Add(this.button1);
             this.Name = "Add_Store_Form";
             this.Text = "Add Store Form";
-            this.Load += new System.EventHandler(this.Add_Store_Form_Load);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Add_Store_Form_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 

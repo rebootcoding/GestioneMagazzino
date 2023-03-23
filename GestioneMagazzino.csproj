@@ -91,6 +91,8 @@
     <Compile Include="customer.cs">
       <DependentUpon>bikestore.tt</DependentUpon>
     </Compile>
+    <Compile Include="Entities\product.cs" />
+    <Compile Include="Entities\store.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
