@@ -70,8 +70,9 @@ namespace GestioneMagazzino
             var store_id = (int)cbx_select_store.SelectedValue;
 
             // mostra la tabella stock con le tre colonne + colonna product e store con oggetti dentro ma con override del metodo ToString();
-            var tabelle = ctx.stocks.Where(x => x.store_id == store_id).ToList();
-            dataGridView1.DataSource = tabelle;
+            var tabella = ctx.stocks.Where(x => x.store_id == store_id).ToList();
+            //orderby da errore
+            dataGridView1.DataSource = tabella;
         }
 
         private void Update_Stores_Click(object sender, EventArgs e)
@@ -81,6 +82,10 @@ namespace GestioneMagazzino
             MessageBox.Show("Data has been updated");
         }
 
-
+        private void dataGridView1_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            var column = dataGridView1.Columns[e.ColumnIndex];
+            dataGridView1.Sort(column, ListSortDirection.Ascending);
+        }
     }
 }

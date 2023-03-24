@@ -32,11 +32,14 @@ namespace GestioneMagazzino
         private void Save_Stock_Click(object sender, EventArgs e)
         {
             var productSelect = ((product)cbx_select_product.SelectedItem);
+            var ID = productSelect.product_id;
+            //var ProductSelect = ctx.products.Where(x => x.product_name == productSelect.product_name).Select(x => x.product_id).ToString();
+            //var IDProductSelect = int.Parse(ProductSelect);
             var storeSelect = ((store)cbx_select_store.SelectedItem);
             var quantità = (int)num_quantity.Value;
 
 
-            InsertStock(productSelect.product_id, storeSelect.store_id, quantità);
+            InsertStock(storeSelect.store_id, ID,  quantità);
             var res = MessageBox.Show(this, $"The data entered are: {Environment.NewLine}{Environment.NewLine}PRODUCT NAME:{Environment.NewLine}{productSelect.product_name}{Environment.NewLine}{Environment.NewLine}STORE NAME:{Environment.NewLine}{storeSelect.store_name}{Environment.NewLine}{Environment.NewLine}QUANTITY:{Environment.NewLine}{quantità}{Environment.NewLine}{Environment.NewLine}Confirm?", "Warning",
                        MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
@@ -52,7 +55,7 @@ namespace GestioneMagazzino
         public void InsertStock(int idStore, int idProduct, int quantity)
         {
 
-            //usiamo First perché la chiave univoca è composta da product_id e store_id quindi non è possibile avere doppioni!
+            //usiamo FirstoOrDefault perché la chiave univoca è composta da product_id e store_id quindi non è possibile avere doppioni!
             var stock2 = ctx.stocks.FirstOrDefault(b => b.product_id == idProduct && b.store_id == idStore);
             if (stock2 != null)
             {
