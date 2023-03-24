@@ -42,13 +42,11 @@ namespace GestioneMagazzino
 
             if (res != DialogResult.Yes)
             {
-
                 return;
             }
             ctx.SaveChanges();
+            MessageBox.Show("Data have been saved correctly");
             num_quantity.Value = 0;
-          //  this.Close();
-
         }
 
         public void InsertStock(int idStore, int idProduct, int quantity)

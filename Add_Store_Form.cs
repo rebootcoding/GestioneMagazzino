@@ -46,10 +46,18 @@ namespace GestioneMagazzino
                             return;
                         }
                         ctx.SaveChanges();
+                        MessageBox.Show("Data have been saved correctly");
+                        tbx_Name.Text = "";
+                        tbx_Phone.Text = "";
+                        tbx_Email.Text = "";
+                        tbx_Street.Text = "";
+                        tbx_City.Text = "";
+                        tbx_State.Text = "";
+                        tbx_zipCode.Text = "";
                     }
                     else
                     {
-                        MessageBox.Show("You didn't enter your name");
+                        MessageBox.Show("You did not enter a name of the new store");
                     }
                 }
                 else
@@ -59,13 +67,8 @@ namespace GestioneMagazzino
             }
             else
             {
-                MessageBox.Show("You did not enter the zip code correctly");
+                MessageBox.Show("You did not enter the ZIP Code correctly");
             }
-
-
-            MessageBox.Show("Data have been saved correctly");
-
-            //this.Close();
         }
 
         private void Insert_New_Store(string name, string phone, string email, string city, string street, string zipCode, string state)
