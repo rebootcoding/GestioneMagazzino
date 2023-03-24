@@ -33,8 +33,6 @@ namespace GestioneMagazzino
         {
             var productSelect = ((product)cbx_select_product.SelectedItem);
             var ID = productSelect.product_id;
-            //var ProductSelect = ctx.products.Where(x => x.product_name == productSelect.product_name).Select(x => x.product_id).ToString();
-            //var IDProductSelect = int.Parse(ProductSelect);
             var storeSelect = ((store)cbx_select_store.SelectedItem);
             var quantità = (int)num_quantity.Value;
 
